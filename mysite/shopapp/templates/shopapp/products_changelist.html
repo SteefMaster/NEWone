@@ -1,0 +1,18 @@
+<!--выпоняем наследование от админского шаблона-->
+{% extends 'admin/change_list.html' %}
+
+<!--блок, где находятся все кнопки:-->
+{% block object-tools-items %}
+<!--чтобы все админские ссылки правильно подгружались:-->
+{% load admin_urls %}
+
+<!--объявляем новую кнопку:-->
+    <li>
+        <a href="{% url 'admin:import_products_csv' %}" class="addlink">
+            Import CSV
+        </a>
+    </li>
+<!--вызываем родительский блок, который мы выше переопределили:-->
+    {{ block.super }}
+
+{% endblock %}

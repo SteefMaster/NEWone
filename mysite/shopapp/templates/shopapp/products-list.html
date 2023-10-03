@@ -1,0 +1,41 @@
+{% extends 'shopapp/base.html' %}
+
+{% block title %}
+  Products list
+{% endblock %}
+
+{% block body %}
+  <h1>Products:</h1>
+  {% if products %}
+    <div>
+    {% for product in products %}
+      <div>
+        <p>Name: <a href="{% url 'shopapp:product_details' pk=product.pk %}">{{ product.name }}</a></p>
+        <p>Price: {{ product.price }}</p>
+        <p>Discount: {% firstof product.discount 'no discount' %}</p>
+      </div>
+      {% if product.preview %}
+        <div>
+          <img src="{{ product.preview.url }}" alt="{{ product.name }}" title="{{ product.description }}" width="200">
+        </div>
+      {% endif %}
+      <br>
+    {% endfor %}
+
+    </div>
+
+  {% else %}
+    <h3>No products yet</h3>
+  {% endif %}
+
+
+{% if perms.shopapp.add_product %}
+<br>
+<ul>
+  <li><a href="{% url 'shopapp:product_create' %}">Create a new product</a></li><br>
+  <li><a href="{% url 'shopapp:products-export' %}">Export products</a></li>
+</ul>
+{% else %}
+<p>You don't have a permission, to create a new product or export products.</p>
+{% endif %}
+{% endblock %}

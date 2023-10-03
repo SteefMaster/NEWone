@@ -1,0 +1,64 @@
+{% extends 'shopapp/base.html' %}
+
+{% block title %}
+  Super DJANGO shop SITE
+{% endblock %}
+
+
+{% block link %}
+    <div style="display: flex; justify-content: space-around;">
+        <div><a href="{% url 'myauth:register' %}">Register new user</a></div>
+        <div>
+            {% if user.is_authenticated %}
+                <a href="{% url 'myauth:logout' %}">Logout</a>
+            {% else %}
+                <a href="{% url 'myauth:login' %}">Login</a>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
+
+{% block body %}
+  <h1 align="center">Hello, this is main page of Super DJANGO shop SITE!</h1>
+  <H2>This is our main services below:</H2>
+  <ul>
+    <li><a href="{% url 'blogapp:blog-articles' %}">
+      NEW: Articles list
+    </a></li>
+  </ul>
+  <div>
+    {% lorem 2 p random %}
+  </div>
+  <ul>
+    <li><a href="{% url 'shopapp:products_list' %}">
+      Available products List
+    </a></li>
+  </ul>
+  <div>
+    {% lorem 3 p random %}
+  </div>
+
+  <ul>
+    <li><a href="{% url 'shopapp:orders_list' %}">
+      Created orders List
+    </a></li>
+  </ul>
+  <div>
+    {% lorem 3 p random %}
+  </div>
+
+  <div>
+    Time running: {{ time_running }}
+  </div>
+
+<h2>Have a look at our secondary services below:</h2>
+    <ol>
+        <li><a href="{% url 'myauth:users-list' %}">user</a></li>
+        <li><a href="/admin/">Admin panel</a></li>
+        <li><a href="{% url 'myauth:cookie-set' %}">Cookie set</a></li>
+        <li><a href="{% url 'myauth:cookie-get' %}">Cookie get</a></li>
+        <li><a href="{% url 'myauth:session-set' %}">Session set</a></li>
+        <li><a href="{% url 'myauth:session-get' %}">Session get</a></li>
+    </ol>
+
+{% endblock %}

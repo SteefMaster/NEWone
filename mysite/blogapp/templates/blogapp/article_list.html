@@ -1,0 +1,28 @@
+{% extends 'blogapp/base.html' %}
+
+
+{% block title %}
+    Articles list
+{% endblock %}
+
+
+
+{% block body %}
+    <h1>Articles list:</h1>
+
+    {% for art in articles %}
+        {{ art.items }}
+        <h3>Заголовок статьи: {{ art.title }}</h3>
+        <p>Дата публикации: {{ art.pub_date }}</p>
+        <p>Имя автора: {{ art.author }}</p>
+        <p>Название категории, к которой относится статья: {{ art.category }}</p>
+        <p>список тегов, привязанных к статье:
+        {% for tag in art.tags.all %}
+            {{ tag }}
+        {% endfor %}
+        </p>
+
+    {% endfor %}
+
+
+{% endblock %}

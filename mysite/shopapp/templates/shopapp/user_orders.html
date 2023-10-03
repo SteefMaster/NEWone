@@ -1,0 +1,28 @@
+{% extends 'shopapp/base.html' %}
+{% load cache %}
+
+{% block title %}
+    User {{ user.username }}
+{% endblock %}
+
+
+
+{% block body %}
+    {% if orders %}
+        <h1>Пользователь <a href="{% url 'myauth:user-details' pk=owner.pk %}">{{ owner.username }}</a> выполнил следующие заказы:</h1>
+        <h6>random num:</h6>
+        <p>{% now "u" %}</p>
+        {% cache 250 orders_cache user.username %}
+            <ul>
+            {% for order in orders %}
+                <li>Заказ <a href="{% url 'shopapp:order_details' pk=order %}">#{{order}}</a></li>
+            {% endfor %}
+            </ul>
+            <h6>random text:</h6>
+            <p>{% lorem 1 p random %}</p>
+        {% endcache %}
+    {% else %}
+        <h1>У пользователя <a href="{% url 'myauth:user-details' pk=owner.pk %}">{{ owner.username }}</a> ещё нет заказов.</h1>
+        <h2>You are: <a href="{% url 'myauth:user-details' pk=user.pk %}">{{ user.username }}</a></h2>
+    {% endif %}
+{% endblock %}

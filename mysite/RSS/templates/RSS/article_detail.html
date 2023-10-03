@@ -1,0 +1,18 @@
+{% extends 'RSS/base.html' %}
+
+
+{% block title %}
+    Article #{{ object.pk }}
+{% endblock %}
+
+
+{% block body %}
+<h1>Article {{ article.title }}</h1>
+<div>
+    <p>Published: {{article.published_at }}</p>
+    <p>{{ article.body }}</p>
+</div>
+<div>
+    <a href="{% url 'rss:articles' %}">Back to articles list</a>
+</div>
+{% endblock %}

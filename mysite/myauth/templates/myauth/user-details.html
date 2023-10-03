@@ -1,0 +1,44 @@
+{% extends 'myauth/base.html' %}
+
+{% block title %}
+  About user {{ user.username }}
+{% endblock %}
+
+
+{% block body %}
+  <h1>User {{ user.username }} info</h1>
+    <h2>Detail</h2>
+    <p>Username: {{ user.username }}</p>
+
+        {% if user.profile.avatar %}
+          <img src="{{ user.profile.avatar.url }}" width="200">
+        {% else %}
+          <p>User still haven't upload avatar.</p>
+        {% endif %}
+
+    <p>First name: {{ user.first_name }}</p>
+    <p>Last name: {{ user.last_name }}</p>
+    <p>Email: {{ user.email }}</p>
+    <p>Bio: {{ user.profile.bio }}</p>
+
+
+<!--    {% if user2.is_staff or user == request.user %}-->
+        <h3>Uploading avatar:</h3>
+        <div>
+          <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            {{ form.as_p }}
+
+
+            <button type="submit" value="Update">Submit</button>
+          </form>
+        </div>
+<!--    {% endif %}-->
+
+
+<p>
+    <a href="{% url 'myauth:users-list' %}">Back to users list</a>
+</p>
+
+{% endblock %}

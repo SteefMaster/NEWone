@@ -1,0 +1,135 @@
+<QuerySet [
+  <Article
+  :
+  Article
+  object
+  (2)>
+]>
+[
+  {
+    "model": "shopapp.product",
+    "pk": 1,
+    "fields": {
+      "name": "Supa Product",
+      "description": "Brand new supa product",
+      "price": "1000.00",
+      "discount": 2,
+      "created_at": "2023-05-30T11:56:20.340Z",
+      "created_by": 1,
+      "archived": false,
+      "preview": "products/product_1/preview/product_3_jNAoK8a.jpeg"
+    }
+  },
+  {
+    "model": "shopapp.product",
+    "pk": 2,
+    "fields": {
+      "name": "spec for archive",
+      "description": "This product was made special for archive",
+      "price": "3000.00",
+      "discount": 100,
+      "created_at": "2023-05-30T11:57:09.380Z",
+      "created_by": 1,
+      "archived": true,
+      "preview": ""
+    }
+  },
+  {
+    "model": "shopapp.product",
+    "pk": 3,
+    "fields": {
+      "name": "Supa BOOK",
+      "description": "Simple decision for casuals",
+      "price": "999.00",
+      "discount": 5,
+      "created_at": "2023-05-30T11:57:48.681Z",
+      "created_by": 1,
+      "archived": false,
+      "preview": "products/product_3/preview/product_2.jpg"
+    }
+  },
+  {
+    "model": "shopapp.product",
+    "pk": 4,
+    "fields": {
+      "name": "Piece of crap",
+      "description": "Product for people below the poverty line",
+      "price": "200.00",
+      "discount": 15,
+      "created_at": "2023-05-30T12:00:44.083Z",
+      "created_by": 1,
+      "archived": false,
+      "preview": "products/product_4/preview/product_1.jpg"
+    }
+  },
+  {
+    "model": "shopapp.product",
+    "pk": 5,
+    "fields": {
+      "name": "Kakart product",
+      "description": "Absolutely fantastic product",
+      "price": "500.00",
+      "discount": 10,
+      "created_at": "2023-05-31T14:50:12.159Z",
+      "created_by": 2,
+      "archived": false,
+      "preview": "products/product_None/preview/ava.jpg"
+    }
+  },
+  {
+    "model": "shopapp.product",
+    "pk": 6,
+    "fields": {
+      "name": "API testing prod",
+      "description": "Fantastic product! U have to get 2",
+      "price": "200.00",
+      "discount": 200,
+      "created_at": "2023-06-26T14:18:10.648Z",
+      "created_by": 1,
+      "archived": false,
+      "preview": "products/product_6/preview/1123.png"
+    }
+  },
+  {
+    "model": "shopapp.product",
+    "pk": 7,
+    "fields": {
+      "name": "Smartphone 1",
+      "description": "",
+      "price": "199.00",
+      "discount": 11,
+      "created_at": "2023-07-10T11:41:33.723Z",
+      "created_by": 1,
+      "archived": false,
+      "preview": ""
+    }
+  },
+  {
+    "model": "shopapp.product",
+    "pk": 8,
+    "fields": {
+      "name": "Smartphone 2",
+      "description": "",
+      "price": "299.00",
+      "discount": 11,
+      "created_at": "2023-07-10T11:41:33.723Z",
+      "created_by": 1,
+      "archived": false,
+      "preview": ""
+    }
+  },
+  {
+    "model": "shopapp.product",
+    "pk": 9,
+    "fields": {
+      "name": "Smartphone 3",
+      "description": "",
+      "price": "399.00",
+      "discount": 11,
+      "created_at": "2023-07-10T11:41:33.723Z",
+      "created_by": 1,
+      "archived": false,
+      "preview": ""
+    }
+  }
+]
