@@ -245,7 +245,7 @@ LOGGING = {
 }
 
 
-# # for logging requests to database in console on DEBUG=True
+# # for logging requests to database2 in console on DEBUG=True
 # LOGGING = {
 #     'version': 1,
 #     'filters': {

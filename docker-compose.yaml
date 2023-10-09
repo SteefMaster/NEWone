@@ -21,4 +21,4 @@ services:
         max-size: "200k"
 #   параметр volumes нужен чтобы прокинуть локальную директорию в докер-контейнер
     volumes:
-      - ./mysite/database:/app/database
+      - ./mysite/database2:/app/database2
